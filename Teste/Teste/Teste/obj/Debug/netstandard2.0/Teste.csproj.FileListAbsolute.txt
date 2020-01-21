@@ -1,0 +1,15 @@
+C:\Users\Heron\source\repos\Teste\Teste\Teste\bin\Debug\netstandard2.0\Teste.deps.json
+C:\Users\Heron\source\repos\Teste\Teste\Teste\bin\Debug\netstandard2.0\Teste.dll
+C:\Users\Heron\source\repos\Teste\Teste\Teste\bin\Debug\netstandard2.0\ref\Teste.dll
+C:\Users\Heron\source\repos\Teste\Teste\Teste\bin\Debug\netstandard2.0\Teste.pdb
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Teste.csprojAssemblyReference.cache
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Teste.AssemblyInfoInputs.cache
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Teste.AssemblyInfo.cs
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Teste.dll
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\ref\Teste.dll
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Teste.pdb
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\AgendamentoView.xaml.g.cs
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\DetalheView.xaml.g.cs
+C:\Users\Heron\source\repos\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\VeiculoView.xaml.g.cs
