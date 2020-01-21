@@ -1938,11 +1938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.Android\\Teste.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.Android\\Teste.Android.csproj",
       "projectName": "Teste.Android",
-      "projectPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.Android\\Teste.Android.csproj",
+      "projectPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.Android\\Teste.Android.csproj",
       "packagesPath": "C:\\Users\\Heron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.Android\\obj\\",
+      "outputPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1963,8 +1963,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste\\Teste.csproj": {
-              "projectPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste\\Teste.csproj"
+            "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste\\Teste.csproj": {
+              "projectPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste\\Teste.csproj"
             }
           }
         }

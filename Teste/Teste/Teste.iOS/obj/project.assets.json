@@ -1022,11 +1022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.iOS\\Teste.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.iOS\\Teste.iOS.csproj",
       "projectName": "Teste.iOS",
-      "projectPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.iOS\\Teste.iOS.csproj",
+      "projectPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.iOS\\Teste.iOS.csproj",
       "packagesPath": "C:\\Users\\Heron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1047,8 +1047,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste\\Teste.csproj": {
-              "projectPath": "C:\\Users\\Heron\\source\\repos\\Teste\\Teste\\Teste\\Teste.csproj"
+            "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste\\Teste.csproj": {
+              "projectPath": "C:\\Users\\Heron\\source\\repos\\TesteAppAlura\\Teste\\Teste\\Teste\\Teste.csproj"
             }
           }
         }
