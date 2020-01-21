@@ -11,20 +11,23 @@ namespace Teste.Views
 {
     public partial class AgendamentoView : ContentPage
     {
-        
         public Agendamento Agendamento { get; set; }
+
         public Veiculo Veiculo { 
             get{return Agendamento.Veiculo;}
             set{Agendamento.Veiculo = value;} 
         }
+
         public string Nome { 
             get{return Agendamento.Nome;}
             set{Agendamento.Nome = value;} 
         }
+
         public string Telefone { 
             get{return Agendamento.Telefone;}
             set{Agendamento.Telefone = value;} 
         }
+
         public string Email { 
             get{return Agendamento.Email;}
             set{Agendamento.Email = value;} 
@@ -47,6 +50,7 @@ namespace Teste.Views
             InitializeComponent();
             this.BindingContext = this;
         }
+        
         private void Button_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Agendamento",
