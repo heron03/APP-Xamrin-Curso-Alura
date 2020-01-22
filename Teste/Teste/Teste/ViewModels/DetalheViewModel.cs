@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 using Teste.Models;
+using Xamarin.Forms;
 
 namespace Teste.ViewModels
 {
@@ -14,6 +16,10 @@ namespace Teste.ViewModels
         public DetalheViewModel(Veiculo veiculo)
         {
             this.Veiculo = veiculo;
+            ProximoCommand = new Command(() =>
+                {
+                    MessagingCenter.Send(veiculo, "Proximo");
+                });
         }
        
         public string TextoFreioABS
@@ -99,5 +105,7 @@ namespace Teste.ViewModels
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        public ICommand ProximoCommand { get; set; }
     }
 }
