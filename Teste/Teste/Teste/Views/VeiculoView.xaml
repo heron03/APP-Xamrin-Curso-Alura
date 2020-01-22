@@ -6,6 +6,7 @@
              Title="Teste"
              x:Class="Teste.Views.VeiculoView">
     <StackLayout Padding="25">
+        <ActivityIndicator IsRunning="{Binding Aguarde}" IsVisible="{Binding Aguarde}"></ActivityIndicator>
         <ListView x:Name="veiculoViewVeiculos" 
                   ItemsSource="{Binding Veiculos}"
                   SelectedItem="{Binding VeiculoSelecionado}"

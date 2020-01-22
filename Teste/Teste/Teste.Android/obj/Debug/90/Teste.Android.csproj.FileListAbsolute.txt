@@ -947,3 +947,4 @@ C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Buffers.dll
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Memory.dll
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
