@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Teste.ViewModels;
 using Teste.Models;
 using Xamarin.Forms;
 
@@ -10,13 +11,15 @@ namespace Teste.Views
 {
     public partial class VeiculoView : ContentPage
     {
-
+        public ListagemViewModel ViewModel { get; set; }
         public VeiculoView()
         {
             InitializeComponent();
+            this.ViewModel = new ListagemViewModel();
+            this.BindingContext = this.ViewModel;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             MessagingCenter.Subscribe<Veiculo>(this, "VeiculoSelecionado",
@@ -24,6 +27,7 @@ namespace Teste.Views
                 {
                     Navigation.PushAsync(new DetalheView(msg));
                 });
+            await this.ViewModel.GetVeiculos();
         }
 
         protected override void OnDisappearing()

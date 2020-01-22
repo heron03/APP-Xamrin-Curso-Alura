@@ -5,10 +5,8 @@
              xmlns:vm="clr-namespace:Teste.ViewModels"
              Title="Teste"
              x:Class="Teste.Views.VeiculoView">
-    <ContentPage.BindingContext>
-        <vm:ListagemViewModel></vm:ListagemViewModel>
-    </ContentPage.BindingContext>
     <StackLayout Padding="25">
+        <ActivityIndicator IsRunning="{Binding Aguarde}" IsVisible="{Binding Aguarde}"></ActivityIndicator>
         <ListView x:Name="veiculoViewVeiculos" 
                   ItemsSource="{Binding Veiculos}"
                   SelectedItem="{Binding VeiculoSelecionado}"

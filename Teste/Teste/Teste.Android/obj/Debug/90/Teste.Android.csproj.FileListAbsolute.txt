@@ -942,3 +942,9 @@ C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\Microsoft.Extensions.Primitives.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\Microsoft.Net.Http.Headers.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Buffers.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Memory.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
