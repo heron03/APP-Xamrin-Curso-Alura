@@ -32,28 +32,31 @@ namespace Teste.Views
 
                 if (confirma)
                 {
-                    DisplayAlert("Agendamento",
-                    string.Format(
-                    @"Veiculo: {0}
-                    Nome: {1}
-                    Fone: {2}
-                    E-mail: {3}
-                    Data Agendamento: {4}
-                    Hora Agendamento: {5}",
-                    ViewModel.Agendamento.Veiculo.nome,
-                    ViewModel.Agendamento.Nome,
-                    ViewModel.Agendamento.Telefone,
-                    ViewModel.Agendamento.Email,
-                    ViewModel.Agendamento.DataAgendamento.ToString("dd/MM/yyyy"),
-                    ViewModel.Agendamento.HoraAgendamento), "OK");
+                    this.ViewModel.SalvaAgendamentoAsync();
                 }
                 });
+            MessagingCenter.Subscribe<Agendamento>(this, "SucessoAgendamento",
+                (msg) =>
+                {
+                    DisplayAlert("Agendamento",
+                    "Agendamento Salvo com Sucesso", "ok");
+                }
+            );
+            MessagingCenter.Subscribe<ArgumentException>(this, "FalhaAgendamento",
+                (msg) =>
+                {
+                    DisplayAlert("Agendamento",
+                    "Falha no Salvamento", "ok");
+                }
+            );
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<Agendamento>(this, "Agendamento");
+            MessagingCenter.Unsubscribe<Agendamento>(this, "SucessoAgendamento");
+            MessagingCenter.Unsubscribe<Agendamento>(this, "FalhaAgendamento");
         }
     }
 }
