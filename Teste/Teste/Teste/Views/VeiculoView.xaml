@@ -5,9 +5,6 @@
              xmlns:vm="clr-namespace:Teste.ViewModels"
              Title="Teste"
              x:Class="Teste.Views.VeiculoView">
-    <ContentPage.BindingContext>
-        <vm:ListagemViewModel></vm:ListagemViewModel>
-    </ContentPage.BindingContext>
     <StackLayout Padding="25">
         <ListView x:Name="veiculoViewVeiculos" 
                   ItemsSource="{Binding Veiculos}"
