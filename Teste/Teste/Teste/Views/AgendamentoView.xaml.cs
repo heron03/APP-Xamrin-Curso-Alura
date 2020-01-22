@@ -23,7 +23,14 @@ namespace Teste.Views
         {
             base.OnAppearing();
             MessagingCenter.Subscribe<Agendamento>(this, "Agendamento",
-                (msg) =>
+                async (msg) =>
+                {
+                var confirma = await DisplayAlert("Salvar Agendamento",
+                "Deseja mesmo enviar o agendamento ?",
+                "Sim", "Não"
+                );
+
+                if (confirma)
                 {
                     DisplayAlert("Agendamento",
                     string.Format(
@@ -39,6 +46,7 @@ namespace Teste.Views
                     ViewModel.Agendamento.Email,
                     ViewModel.Agendamento.DataAgendamento.ToString("dd/MM/yyyy"),
                     ViewModel.Agendamento.HoraAgendamento), "OK");
+                }
                 });
         }
 
