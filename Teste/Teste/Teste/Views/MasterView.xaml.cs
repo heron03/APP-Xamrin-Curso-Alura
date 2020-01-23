@@ -10,13 +10,12 @@ using Xamarin.Forms.Xaml;
 
 namespace Teste.Views
 {
-    public partial class MasterView : ContentPage
+    public partial class MasterView : TabbedPage
     {
         public MasterView(Usuario usuario)
         {
             InitializeComponent();
-            this.ViewModel = new MasterViewModel(usuario);
-            this.BindingContext = this.ViewModel;
+            this.BindingContext = new MasterViewModel(usuario);
         }
 
         public MasterViewModel ViewModel { get; set; }
