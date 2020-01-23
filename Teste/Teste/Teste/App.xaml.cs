@@ -13,7 +13,7 @@ namespace Teste
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new VeiculoView());
+            MainPage = new LoginView();
         }
 
         protected override void OnStart()
