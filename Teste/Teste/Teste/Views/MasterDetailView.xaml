@@ -4,11 +4,13 @@
                   xmlns:view="clr-namespace:Teste.Views"
                   x:Class="Teste.Views.MasterDetailView">
     <MasterDetailPage.Master>
-        <ContentPage Title="Perfil">
-            <Label Text="Este é o perfil do usuário"></Label>
-        </ContentPage>
+        <view:MasterView></view:MasterView>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <view:VeiculoView></view:VeiculoView>
+        <NavigationPage>
+            <x:Arguments>
+                <view:VeiculoView></view:VeiculoView>
+            </x:Arguments>
+        </NavigationPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>
