@@ -12,4 +12,8 @@ namespace Teste.Models
         public string telefone { get; set; }
         public string email { get; set; }
     }
+    public class LoginResult
+    {
+        public Usuario usuario { get; set; }
+    }
 }

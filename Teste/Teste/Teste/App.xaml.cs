@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Teste.Models;
 using Teste.Views;
 using Xamarin.Forms;
 
@@ -18,7 +19,11 @@ namespace Teste
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin",
+            (usuario) =>
+            {
+                MainPage = new NavigationPage(new VeiculoView());
+            });
         }
 
         protected override void OnSleep()
