@@ -6,8 +6,15 @@
              mc:Ignorable="d"
              Title="Perfil"
              x:Class="Teste.Views.MasterView">
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="João da Silva"></Label>
-        <Label Text="joao@alura.com.br"></Label>
-    </StackLayout>
+    <Frame OutlineColor="Silver"
+         VerticalOptions="CenterAndExpand"
+         Margin="15">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="{Binding Nome}"></Label>
+            <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"></BoxView>
+            <Label Text="{Binding Email}"></Label>
+            <BoxView Color="Gray" HeightRequest="1" HorizontalOptions="Fill"></BoxView>
+            <Button Text="Perfil"></Button>
+        </StackLayout>
+    </Frame>
 </ContentPage>

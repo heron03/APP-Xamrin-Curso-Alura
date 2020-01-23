@@ -23,7 +23,7 @@ namespace Teste
             (usuario) =>
             {
                 //MainPage = new NavigationPage(new VeiculoView());
-                MainPage = new MasterDetailView();
+                MainPage = new MasterDetailView(usuario);
             });
         }
 
