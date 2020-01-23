@@ -22,7 +22,8 @@ namespace Teste
             MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin",
             (usuario) =>
             {
-                MainPage = new NavigationPage(new VeiculoView());
+                //MainPage = new NavigationPage(new VeiculoView());
+                MainPage = new MasterDetailView();
             });
         }
 

@@ -29,3 +29,5 @@ C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\bin\Debug\netstandar
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\bin\Debug\netstandard2.0\Teste.pdb
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\MasterDetailView.xaml.g.cs
+C:\Users\Heron\source\repos\TesteAppAlura\Teste\Teste\Teste\obj\Debug\netstandard2.0\Views\MasterView.xaml.g.cs
