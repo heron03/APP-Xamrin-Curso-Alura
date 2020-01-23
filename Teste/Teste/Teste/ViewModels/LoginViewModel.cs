@@ -39,28 +39,13 @@ namespace Teste.ViewModels
         {
             EntrarCommand = new Command(async () =>
             {
-                await FazerLogin();
+                var loginService = new LoginService();
+                await loginService.FazerLogin(new Login(usuario, senha));
             }, () =>
             {
                 return !string.IsNullOrEmpty(usuario)
                         && !string.IsNullOrEmpty(senha);
             });
-        }
-
-        private static async Task FazerLogin()
-        {
-            using (var cliente = new HttpClient())
-            {
-                var camposFormulario = new FormUrlEncodedContent(new[]
-                  {
-                        new KeyValuePair<string, string>("email", "joao@alura.com.br"),
-                        new KeyValuePair<string, string>("senha", "alura123")
-                      });
-
-                cliente.BaseAddress = new Uri("https://aluracar.herokuapp.com");
-                await cliente.PostAsync("/login", camposFormulario);
-                MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
-            }
         }
     }
 }

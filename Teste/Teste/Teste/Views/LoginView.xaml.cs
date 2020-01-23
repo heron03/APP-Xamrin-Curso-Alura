@@ -15,9 +15,21 @@ namespace Teste.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            MessagingCenter.Send<Usuario>(new Usuario(), "SucessoLogin");
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<LoginException>(this, "FalhaLogin",
+            async (exc) =>
+            {
+                await DisplayAlert("Login", exc.Message, "Ok");
+            });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<LoginException>(this, "FalhaLogin");
         }
     }
 }
