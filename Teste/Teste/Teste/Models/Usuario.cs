@@ -15,5 +15,11 @@ namespace Teste.Models
     public class LoginResult
     {
         public Usuario usuario { get; set; }
+        public Usuario email { get; set; }
     }
+    public class ResultadoLogin
+    {
+        public Usuario usuario { get; set; }
+    }
+
 }
