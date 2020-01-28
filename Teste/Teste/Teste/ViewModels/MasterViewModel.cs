@@ -53,6 +53,9 @@ namespace Teste.ViewModels
             }
         }
 
+        public ImageSource fotoPerfil = "perfil.png";
+        public ImageSource FotoPerfil { get { return fotoPerfil;} set { fotoPerfil = value;} }
+
         private readonly Usuario usuario;
 
         public ICommand EditarPerfilCommand { get; private set; }
