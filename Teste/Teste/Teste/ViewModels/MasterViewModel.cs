@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using Teste.Models;
@@ -85,6 +86,12 @@ namespace Teste.ViewModels
             TirarFoto = new Command(() =>
             {
                 DependencyService.Get<ICamera>().TirarFoto();
+            });
+            MessagingCenter.Subscribe<byte[]>(this, "FotoTirada",
+                (bytes) =>
+                {
+                    FotoPerfil = ImageSource.FromStream(
+                        () => new MemoryStream(bytes));
             });
         }
     }
