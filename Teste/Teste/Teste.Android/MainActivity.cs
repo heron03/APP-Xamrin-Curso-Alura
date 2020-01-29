@@ -32,6 +32,7 @@ namespace Teste.Droid
 
         static Java.IO.File arquivoImagem;
 
+        [Obsolete]
         public void TirarFoto()
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
