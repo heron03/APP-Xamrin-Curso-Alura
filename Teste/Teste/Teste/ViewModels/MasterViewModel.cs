@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using Teste.Models;
@@ -53,11 +54,15 @@ namespace Teste.ViewModels
             }
         }
 
+        public ImageSource fotoPerfil = "perfil.png";
+        public ImageSource FotoPerfil { get { return fotoPerfil;} private set { fotoPerfil = value;} }
+
         private readonly Usuario usuario;
 
         public ICommand EditarPerfilCommand { get; private set; }
         public ICommand EditarCommand { get; private set; }
         public ICommand SalvarCommand { get; private set; }
+        public ICommand TirarFoto { get; private set; }
 
         public MasterViewModel(Usuario usuario)
         {
@@ -77,6 +82,16 @@ namespace Teste.ViewModels
             {
                 Editando = false;
                 MessagingCenter.Send<Usuario>(usuario, "SucessoSalvarUsuario");
+            });
+            TirarFoto = new Command(() =>
+            {
+                DependencyService.Get<ICamera>().TirarFoto();
+            });
+            MessagingCenter.Subscribe<byte[]>(this, "FotoTirada",
+                (bytes) =>
+                {
+                    FotoPerfil = ImageSource.FromStream(
+                        () => new MemoryStream(bytes));
             });
         }
     }
