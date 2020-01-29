@@ -6,11 +6,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Teste.Droid;
 
+[assembly: Xamarin.Forms.Dependency(typeof(MainActivity))]
 namespace Teste.Droid
 {
     [Activity(Label = "Teste", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, ICamera
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,6 +30,11 @@ namespace Teste.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public void TirarFoto()
+        {
+            throw new NotImplementedException();
         }
     }
 }
