@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Teste.Droid;
+using Xamarin.Forms;
+using Android.Content;
+using Android.Provider;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MainActivity))]
 namespace Teste.Droid
@@ -34,7 +37,9 @@ namespace Teste.Droid
 
         public void TirarFoto()
         {
-            throw new NotImplementedException();
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            var activity = Forms.Context as Activity;
+            activity.StartActivityForResult(intent, 0);
         }
     }
 }
