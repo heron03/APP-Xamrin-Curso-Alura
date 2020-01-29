@@ -10,6 +10,7 @@ using Teste.Droid;
 using Xamarin.Forms;
 using Android.Content;
 using Android.Provider;
+using Teste.Media;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MainActivity))]
 namespace Teste.Droid
@@ -31,7 +32,6 @@ namespace Teste.Droid
 
         static Java.IO.File arquivoImagem;
 
-        [Obsolete]
         public void TirarFoto()
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
@@ -49,8 +49,8 @@ namespace Teste.Droid
         {
             Java.IO.File arquivoImagem;
             Java.IO.File diretorio = new Java.IO.File(
-            global::Android.OS.Environment.GetExternalStoragePublicDirectory(
-            global::Android.OS.Environment.DirectoryPictures), "Imagens");
+            Android.OS.Environment.GetExternalStoragePublicDirectory(
+            Android.OS.Environment.DirectoryPictures), "Imagens");
 
             if (!diretorio.Exists())
                 diretorio.Mkdirs();

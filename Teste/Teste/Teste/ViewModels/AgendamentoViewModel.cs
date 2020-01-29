@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Teste.Data;
 using Teste.Models;
 using Xamarin.Forms;
 
@@ -135,6 +136,8 @@ namespace Teste.ViewModels
             });
             var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
             var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+            SalvarAgendamentoDB();
+
             if (resposta.IsSuccessStatusCode)
             {
                 MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
@@ -145,5 +148,12 @@ namespace Teste.ViewModels
             }
         }
 
+        private static void SalvarAgendamentoDB()
+        {
+            using (var conexao = DependencyService.Get<ISQLite>().PegarConexao())
+            {
+
+            }
+        }
     }
 }

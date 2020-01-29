@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Input;
+using Teste.Media;
 using Teste.Models;
 using Xamarin.Forms;
 
@@ -55,7 +56,14 @@ namespace Teste.ViewModels
         }
 
         public ImageSource fotoPerfil = "perfil.png";
-        public ImageSource FotoPerfil { get { return fotoPerfil;} private set { fotoPerfil = value;} }
+        public ImageSource FotoPerfil {
+            get { 
+                return fotoPerfil;
+            } 
+            private set { 
+                fotoPerfil = value;
+                OnPropertyChanged();
+            } }
 
         private readonly Usuario usuario;
 
