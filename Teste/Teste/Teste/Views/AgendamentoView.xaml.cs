@@ -12,10 +12,10 @@ namespace Teste.Views
     {
         public AgendamentoViewModel ViewModel { get; set; }
 
-        public AgendamentoView(Veiculo veiculo)
+        public AgendamentoView(Veiculo veiculo, Usuario usuario)
         {
             InitializeComponent();
-            this.ViewModel = new AgendamentoViewModel(veiculo);
+            this.ViewModel = new AgendamentoViewModel(veiculo, usuario);
             this.BindingContext = this.ViewModel;
         }
 
@@ -43,10 +43,11 @@ namespace Teste.Views
                 }
             );
             MessagingCenter.Subscribe<ArgumentException>(this, "FalhaAgendamento",
-                (msg) =>
+                async (msg) =>
                 {
-                    DisplayAlert("Agendamento",
+                    await DisplayAlert("Agendamento",
                     "Falha no Salvamento", "ok");
+                    await Navigation.PopToRootAsync();
                 }
             );
         }

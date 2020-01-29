@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Teste.Data;
 using Teste.Models;
 using Xamarin.Forms;
 
@@ -17,17 +18,18 @@ namespace Teste.ViewModels
 
         public Agendamento Agendamento { get; set; }
 
-        public Veiculo Veiculo
+        public string Modelo
         {
-            get
-            {
-                return Agendamento.Veiculo;
-            }
-            set
-            {
-                Agendamento.Veiculo = value;
-            }
+            get { return this.Agendamento.Modelo; }
+            set { this.Agendamento.Modelo = value; }
         }
+
+        public decimal Preco
+        {
+            get { return this.Agendamento.Preco; }
+            set { Agendamento.Preco = value; }
+        }
+
 
         public string Nome
         {
@@ -99,10 +101,9 @@ namespace Teste.ViewModels
         }
 
 
-        public AgendamentoViewModel(Veiculo veiculo)
+        public AgendamentoViewModel(Veiculo veiculo, Usuario usuario)
         {
-            this.Agendamento = new Agendamento();
-            this.Agendamento.Veiculo = veiculo;
+            this.Agendamento = new Agendamento(usuario.nome, usuario.telefone, usuario.email, veiculo.nome, veiculo.preco);
             AgendarCommand = new Command(() =>
             {
                 MessagingCenter.Send<Agendamento>(this.Agendamento, "Agendamento");
@@ -129,12 +130,14 @@ namespace Teste.ViewModels
                 nome = Nome,
                 fone = Telefone,
                 email = Email,
-                modelo = Veiculo.nome,
-                preco = Veiculo.preco,
+                modelo = Modelo,
+                preco = Preco,
                 dataAgendamento = dataHoraAgendamento
             });
             var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
             var resposta = await cliente.PostAsync(URL_POST_AGENDAMENTO, conteudo);
+            SalvarAgendamentoDB();
+
             if (resposta.IsSuccessStatusCode)
             {
                 MessagingCenter.Send<Agendamento>(this.Agendamento, "SucessoAgendamento");
@@ -145,5 +148,13 @@ namespace Teste.ViewModels
             }
         }
 
+        private void SalvarAgendamentoDB()
+        {
+            using (var conexao = DependencyService.Get<ISQLite>().PegarConexao())
+            {
+                AgendamentoDAO dao = new AgendamentoDAO(conexao);
+                dao.Salvar(new Agendamento(Nome, Telefone, Email, Modelo, Preco));
+            }
+        }
     }
 }

@@ -1,3 +1,6 @@
+Teste.Droid.CameraActivity, Teste.Android;crc647ee4eda882989a52.CameraActivity
+Teste.Droid.CameraActivity;crc647ee4eda882989a52.CameraActivity
+teste.droid.CameraActivity;crc647ee4eda882989a52.CameraActivity
 Teste.Droid.MainActivity, Teste.Android;crc647ee4eda882989a52.MainActivity
 Teste.Droid.MainActivity;crc647ee4eda882989a52.MainActivity
 teste.droid.MainActivity;crc647ee4eda882989a52.MainActivity
