@@ -55,15 +55,20 @@ namespace Teste.ViewModels
             }
         }
 
-        public ImageSource fotoPerfil = "perfil.png";
-        public ImageSource FotoPerfil {
-            get { 
+        private ImageSource fotoPerfil = "perfil.png";
+
+        public ImageSource FotoPerfil
+        {
+            get
+            {
                 return fotoPerfil;
-            } 
-            private set { 
+            }
+            private set
+            {
                 fotoPerfil = value;
                 OnPropertyChanged();
-            } }
+            }
+        }
 
         private readonly Usuario usuario;
 
@@ -71,35 +76,62 @@ namespace Teste.ViewModels
         public ICommand EditarCommand { get; private set; }
         public ICommand SalvarCommand { get; private set; }
         public ICommand TirarFoto { get; private set; }
+        public ICommand MeusAgendamentos { get; private set; }
+        public ICommand NovoAgendamento
+        {
+            get; private set;
+        }
 
         public MasterViewModel(Usuario usuario)
         {
             this.usuario = usuario;
 
+            DefinirComandos(usuario);
+
+            AssinarMensagens();
+        }
+
+        private void AssinarMensagens()
+        {
+            MessagingCenter.Subscribe<byte[]>(this, "FotoTirada",
+            (bytes) =>
+            {
+                FotoPerfil = ImageSource.FromStream(
+                    () => new MemoryStream(bytes));
+            });
+        }
+
+        private void DefinirComandos(Usuario usuario)
+        {
             EditarPerfilCommand = new Command(() =>
             {
                 MessagingCenter.Send<Usuario>(usuario, "EditarPerfil");
             });
 
-            EditarCommand = new Command(() =>
-            {
-                Editando = true;
-            });
-
             SalvarCommand = new Command(() =>
             {
-                Editando = false;
+                this.Editando = false;
                 MessagingCenter.Send<Usuario>(usuario, "SucessoSalvarUsuario");
             });
+
+            EditarCommand = new Command(() =>
+            {
+                this.Editando = true;
+            });
+
             TirarFoto = new Command(() =>
             {
                 DependencyService.Get<ICamera>().TirarFoto();
             });
-            MessagingCenter.Subscribe<byte[]>(this, "FotoTirada",
-                (bytes) =>
-                {
-                    FotoPerfil = ImageSource.FromStream(
-                        () => new MemoryStream(bytes));
+
+            MeusAgendamentos = new Command(() =>
+            {
+                MessagingCenter.Send<Usuario>(usuario, "MeusAgendamentos");
+            });
+
+            NovoAgendamento = new Command(() =>
+            {
+                MessagingCenter.Send<Usuario>(usuario, "NovoAgendamento");
             });
         }
     }

@@ -9,6 +9,21 @@ namespace Teste.Data
     public class AgendamentoDAO
     {
         readonly SQLiteConnection conexao;
+        
+        private List<Agendamento> lista;
+
+        public List<Agendamento> Lista
+        {
+            get
+            {
+                return conexao.Table<Agendamento>().ToList();
+            }
+            private set
+            {
+                lista = value;
+            }
+        }
+
         public AgendamentoDAO(SQLiteConnection conexao)
         {
             this.conexao = conexao;
@@ -17,7 +32,14 @@ namespace Teste.Data
 
         public void Salvar (Agendamento agendamento)
         {
-            conexao.Insert(agendamento);
+            if (conexao.Find<Agendamento>(agendamento.ID) == null)
+            {
+                conexao.Insert(agendamento);
+            }
+            else
+            {
+                conexao.Update(agendamento);
+            }
         }
     }
 }
