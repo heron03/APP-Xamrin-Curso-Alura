@@ -17,13 +17,13 @@ using Teste.Droid;
 [assembly: Xamarin.Forms.Dependency(typeof(SQLite_android))]
 namespace Teste.Droid
 {
-    class SQLite_android : ISQLite
+    public class SQLite_android : ISQLite
     {
-        private const string nomeArquivoDB = "Agendamento.db3";
+        private const string fileNameDB = "Agendamento.db3";
         public SQLiteConnection PegarConexao()
         {
-            var caminhoDb = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.Path, nomeArquivoDB);
-            return new SQLite.SQLiteConnection(caminhoDb);
+            var pathDB = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.Path, fileNameDB);
+            return new SQLiteConnection(pathDB);
         }
     }
 }
